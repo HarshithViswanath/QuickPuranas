@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quick Puranas - Multi-angle contextual learning tool powered by Wikipedia APIs.">
+  <title>Quick Puranas — Multi-Angle Knowledge</title>
+  
+  <!-- Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header & Hero Section -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo-container">
+        <span class="logo-icon" aria-hidden="true">📜</span>
+        <h1 class="logo-title">Quick Puranas</h1>
+      </div>
+      <p class="tagline">Multi-angle contextual learning, instantly.</p>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="app-container">
+
+    <!-- Search Section -->
+    <section class="search-section" aria-label="Search topics">
+      <div class="search-input-wrapper">
+        <span class="search-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search any topic (e.g. Quantum Computing, Indus Valley, Renaissance)..." 
+          autocomplete="off"
+          aria-label="Search topic on Wikipedia"
+          aria-expanded="false"
+          aria-controls="suggestions-box"
+        />
+        
+        <button id="clear-search-btn" class="clear-btn hidden" aria-label="Clear search text">&times;</button>
+        <div id="loading-spinner" class="spinner hidden" aria-label="Loading search suggestions"></div>
+      </div>
+
+      <!-- Live Search Suggestions Dropdown -->
+      <ul id="suggestions-box" class="suggestions-list hidden" role="listbox" aria-label="Search suggestions"></ul>
+    </section>
+
+    <!-- Recent Search History Bar -->
+    <section class="recent-searches-container" id="recent-searches-section">
+      <span class="recent-label">Recently Viewed:</span>
+      <div id="recent-tags" class="tags-wrapper">
+        <!-- Dynamically rendered past search tags -->
+      </div>
+      <button id="clear-history-btn" class="text-btn" aria-label="Clear recent search history">Clear History</button>
+    </section>
+
+    <!-- Status Messages (Loading Skeleton / Error State / Disambiguation State) -->
+    <section id="status-message" class="status-container hidden" aria-live="polite"></section>
+
+    <!-- Results Dashboard (Multi-Context Layout) -->
+    <section id="results-container" class="results-container hidden" aria-label="Topic details and context">
+
+      <!-- Topic Header Banner -->
+      <div class="topic-header-card">
+        <div class="topic-meta">
+          <div class="title-row">
+            <h2 id="topic-title">--</h2>
+            <div class="meta-badges">
+              <span id="reading-time-badge" class="badge badge-time">~1 min read</span>
+              <span id="topic-type-badge" class="badge badge-type">Overview</span>
+            </div>
+          </div>
+          <p id="topic-description" class="topic-subtext"></p>
+        </div>
+        <div class="topic-actions">
+          <a id="wiki-full-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Read Full Article on Wikipedia</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Context Grid Layout -->
+      <div class="context-grid">
+        
+        <!-- Context Card 1: Short Summary -->
+        <article class="context-card card-summary">
+          <div class="card-header">
+            <div class="header-title">
+              <span class="card-icon" aria-hidden="true">📖</span>
+              <h3>Short Summary</h3>
+            </div>
+            <span class="card-badge">Overview</span>
+          </div>
+          <div class="card-body">
+            <div id="summary-thumbnail-wrapper" class="thumbnail-wrapper hidden">
+              <img id="summary-thumbnail" src="" alt="Topic illustration" loading="lazy" />
+            </div>
+            <p id="summary-text" class="summary-paragraph">Search a topic to view its summary.</p>
+          </div>
+        </article>
+
+        <!-- Context Card 2: Key Facts -->
+        <article class="context-card card-key-facts">
+          <div class="card-header">
+            <div class="header-title">
+              <span class="card-icon" aria-hidden="true">⚡</span>
+              <h3>Key Takeaways</h3>
+            </div>
+            <span class="card-badge">Bite-sized</span>
+          </div>
+          <div class="card-body">
+            <ul id="key-facts-list" class="facts-list">
+              <li>Enter a topic above to extract key factual bullet points.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Context Card 3: Related Topics -->
+        <article class="context-card card-related">
+          <div class="card-header">
+            <div class="header-title">
+              <span class="card-icon" aria-hidden="true">🔗</span>
+              <h3>Related Topics to Explore</h3>
+            </div>
+            <span class="card-badge">Deep Dive</span>
+          </div>
+          <div class="card-body">
+            <div id="related-topics-grid" class="related-grid">
+              <!-- Related topic cards dynamically injected -->
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p><strong>Quick Puranas</strong> — Fast, multi-angle contextual search tool for curious minds.</p>
+      <p class="footer-subtext">Powered by live Wikipedia APIs • Pure HTML, CSS & Vanilla JS</p>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
