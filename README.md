@@ -30,32 +30,32 @@ QuickPuranas/
 ```
 ---
 =======
-# 📜 Quick Puranas — Multi-Angle Perspective & Knowledge Engine
+# Quick Puranas — Multi-Angle Perspective & Knowledge Engine
 
 > A fast, comprehensive multi-perspective knowledge search engine for leaders, countries, historical events, and concepts — powered by Wikipedia APIs. Built with **pure HTML, CSS, and Vanilla JavaScript** (no frameworks, no build tools).
 
 ---
 
-## ✨ Key Multi-Angle Features
+##  Key Multi-Angle Features
 
 When you search for any king, country, event, or leader (e.g. *India*, *Emperor Ashoka*, *China*, *Julius Caesar*, *Alexander the Great*), **Quick Puranas** automatically extracts and categorizes information into **6 distinct multi-perspective context cards**:
 
-1. 🌟 **Encouragement & Spirit**: Inspirational essence, positive heritage, national/historical spirit, and celebrated triumphs.
-2. 🏆 **Key Advantages & Major Strengths**: Strategic advantages, innovations, economic power, victories, and geopolitical strengths.
-3. ⚠️ **Disadvantages & Deficits**: Flaws, societal costs, vulnerabilities, structural hurdles, and historical drawbacks.
-4. ⚡ **Triggers & Outrage Factors**: ("What makes someone angry") — Controversies, historical wars, massacres, harsh policies, and heated territorial disputes.
-5. 👁️ **Bad Impression & Common Misconceptions**: Common myths, negative stereotypes vs historical reality, scandals, and public misperceptions.
-6. 📜 **Contributions & Lasting Legacy**: ("What has been done") — Concrete timeline of actions, legal reforms, monuments built, and lasting heritage.
+1.  **Encouragement & Spirit**: Inspirational essence, positive heritage, national/historical spirit, and celebrated triumphs.
+2.  **Key Advantages & Major Strengths**: Strategic advantages, innovations, economic power, victories, and geopolitical strengths.
+3.  **Disadvantages & Deficits**: Flaws, societal costs, vulnerabilities, structural hurdles, and historical drawbacks.
+4.  **Triggers & Outrage Factors**: ("What makes someone angry") — Controversies, historical wars, massacres, harsh policies, and heated territorial disputes.
+5.  **Bad Impression & Common Misconceptions**: Common myths, negative stereotypes vs historical reality, scandals, and public misperceptions.
+6.  **Contributions & Lasting Legacy**: ("What has been done") — Concrete timeline of actions, legal reforms, monuments built, and lasting heritage.
 
 ### Additional Features:
-- 🖼️ **Multi-Media Image Gallery**: Fetches lead cover photos and gallery images dynamically attached to context angles.
-- 🎯 **Perspective Filter Bar**: Quickly filter between all 6 perspectives or view single target angles (e.g., *Triggers & Outrage*, *Advantages*, *Legacy*).
-- ⚡ **Debounced Live Autocomplete**: Real-time Wikipedia OpenSearch API suggestions debounced by 350ms.
-- 🕒 **Search History**: LocalStorage persistence for recent topics.
+-  **Multi-Media Image Gallery**: Fetches lead cover photos and gallery images dynamically attached to context angles.
+-  **Perspective Filter Bar**: Quickly filter between all 6 perspectives or view single target angles (e.g., *Triggers & Outrage*, *Advantages*, *Legacy*).
+-  **Debounced Live Autocomplete**: Real-time Wikipedia OpenSearch API suggestions debounced by 350ms.
+-  **Search History**: LocalStorage persistence for recent topics.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **HTML5**: Semantic layout (`<header>`, `<main>`, `<article>`, `<nav>`, `<footer>`) with ARIA accessibility roles.
 - **CSS3**: CSS Custom Properties (Variables), Modern Grid & Flexbox layouts, Glassmorphic top hero, custom typography (`Cinzel`, `Inter`, `Lora`), animated skeleton loaders, and responsive breakpoints.
@@ -67,7 +67,7 @@ When you search for any king, country, event, or leader (e.g. *India*, *Emperor 
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 Simply open `index.html` in any browser or run a local HTTP server:
 
