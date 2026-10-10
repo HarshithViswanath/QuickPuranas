@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   Quick Puranas — Multi-Angle Knowledge Tool
 > A fast, distraction-free search and contextual learning tool designed for curious minds who want quick, multi-angle context on any topic — powered by live Wikipedia APIs. Built with **pure HTML, CSS, and Vanilla JavaScript** (no frameworks, no build tools).
 ---
@@ -28,3 +29,50 @@ QuickPuranas/
 └── README.md      # Documentation & setup guide
 ```
 ---
+=======
+# 📜 Quick Puranas — Multi-Angle Perspective & Knowledge Engine
+
+> A fast, comprehensive multi-perspective knowledge search engine for leaders, countries, historical events, and concepts — powered by Wikipedia APIs. Built with **pure HTML, CSS, and Vanilla JavaScript** (no frameworks, no build tools).
+
+---
+
+## ✨ Key Multi-Angle Features
+
+When you search for any king, country, event, or leader (e.g. *India*, *Emperor Ashoka*, *China*, *Julius Caesar*, *Alexander the Great*), **Quick Puranas** automatically extracts and categorizes information into **6 distinct multi-perspective context cards**:
+
+1. 🌟 **Encouragement & Spirit**: Inspirational essence, positive heritage, national/historical spirit, and celebrated triumphs.
+2. 🏆 **Key Advantages & Major Strengths**: Strategic advantages, innovations, economic power, victories, and geopolitical strengths.
+3. ⚠️ **Disadvantages & Deficits**: Flaws, societal costs, vulnerabilities, structural hurdles, and historical drawbacks.
+4. ⚡ **Triggers & Outrage Factors**: ("What makes someone angry") — Controversies, historical wars, massacres, harsh policies, and heated territorial disputes.
+5. 👁️ **Bad Impression & Common Misconceptions**: Common myths, negative stereotypes vs historical reality, scandals, and public misperceptions.
+6. 📜 **Contributions & Lasting Legacy**: ("What has been done") — Concrete timeline of actions, legal reforms, monuments built, and lasting heritage.
+
+### Additional Features:
+- 🖼️ **Multi-Media Image Gallery**: Fetches lead cover photos and gallery images dynamically attached to context angles.
+- 🎯 **Perspective Filter Bar**: Quickly filter between all 6 perspectives or view single target angles (e.g., *Triggers & Outrage*, *Advantages*, *Legacy*).
+- ⚡ **Debounced Live Autocomplete**: Real-time Wikipedia OpenSearch API suggestions debounced by 350ms.
+- 🕒 **Search History**: LocalStorage persistence for recent topics.
+
+---
+
+## 🛠️ Tech Stack
+
+- **HTML5**: Semantic layout (`<header>`, `<main>`, `<article>`, `<nav>`, `<footer>`) with ARIA accessibility roles.
+- **CSS3**: CSS Custom Properties (Variables), Modern Grid & Flexbox layouts, Glassmorphic top hero, custom typography (`Cinzel`, `Inter`, `Lora`), animated skeleton loaders, and responsive breakpoints.
+- **Vanilla JavaScript (ES6+)**: `async/await`, Fetch API, custom debouncing, multi-bucket NLP sentence classification engine, and `localStorage`.
+- **Wikipedia APIs**:
+  - **Wikipedia OpenSearch API**: `https://en.wikipedia.org/w/api.php?action=opensearch`
+  - **Wikipedia REST Summary API**: `https://en.wikipedia.org/api/rest_v1/page/summary/{title}`
+  - **MediaWiki Action API Extracts & Images**: `https://en.wikipedia.org/w/api.php?action=query`
+
+---
+
+## 🚀 Getting Started
+
+Simply open `index.html` in any browser or run a local HTTP server:
+
+```bash
+python -m http.server 8000
+```
+Then visit `http://localhost:8000`!
+>>>>>>> de93c26 (Done upto the mark)
